@@ -1,5 +1,5 @@
 ---
-title: Building our site data with nonplain
+title: Building site data with nonplain
 date: 2021-03-11
 ---
 

@@ -3,7 +3,7 @@ title: Putting it all together with 11ty
 date: 2021-03-11
 ---
 
-**Note:** if you haven't read [part 1](Building our site data with nonplain.md) of this guide, go read that first!
+**Note:** if you haven't read [part 1](Building site data with nonplain.md) of this guide, go read that first!
 
 ---
 

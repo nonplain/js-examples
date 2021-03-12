@@ -26,7 +26,7 @@ Feel free to check out the source code [on GitHub](https://github.com/nonplain/j
 ## Do it yourself
 
 - **[[How to make this site]]:**
-  1. [[Building our site data with nonplain]]
+  1. [[Building site data with nonplain]]
   2. [[Putting it all together with 11ty]]
 
 <div style="display: flex; flex-direction: row; margin-top: 36px;">
