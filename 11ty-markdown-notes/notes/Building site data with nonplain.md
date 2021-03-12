@@ -7,7 +7,7 @@ This site is built completely from JSON data. So, before we start generating our
 
 ## Notes2JSON with nonplain
 
-`nonplain` and `nonplain-md-link` make building markdown notes into webpages simple by providing composable tools for parsing groups of "nonplain" (plaintext + fronmatter) files, transforming them as needed, and then exporting them. Loading the files, parsing them, transforming their body content and metadata, and exporting them to JSON is possible in just **60 lines** of code.
+`nonplain` and `nonplain-md-link` make building markdown notes into webpages simple by providing composable tools for parsing groups of "nonplain" (plaintext + frontmatter) files, transforming them as needed, and then exporting them. Loading the files, parsing them, transforming their body content and metadata, and exporting them to JSON is possible in just **60 lines** of code.
 
 ### The notes
 

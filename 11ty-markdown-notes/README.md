@@ -6,6 +6,10 @@ Check out the live version of this site for a tutorial on how to build it yourse
 
 ## Run locally
 
+```
+$ cd site/
+```
+
 - Build notes:
   ```
   $ npm run notes
