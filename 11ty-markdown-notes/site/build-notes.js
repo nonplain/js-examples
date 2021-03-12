@@ -21,8 +21,8 @@ function markdownLinksToHTML(content) {
     const isExternalUrl = isFullUrl(link.path);
 
     if (isExternalUrl) {
-      const externalLinkArrow = '&#129125;';
-      link.innerText = link.innerText + externalLinkArrow;
+      const externalLinkArrow = '&#x2197;';
+      link.innerText = link.innerText + ' ' + externalLinkArrow;
 
       return link.composeHTML('rel="noreferrer" target="_blank"');
     } else {

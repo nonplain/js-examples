@@ -17,7 +17,7 @@ The result is a lightning-fast JAMstack website built entirely from markdown not
 
 ## A few features
 
-- **Automatic external links.** See all those links with "&#129125;" next to them? Those are external links. External links automatically open in new tabs, just like they should, thanks to [`nonplain-md-link`](https://github.com/nonplain/nonplain-md-link.js).
+- **Automatic external links.** See all those links with "&#x2197;" next to them? Those are external links. External links automatically open in new tabs, just like they should, thanks to [`nonplain-md-link`](https://github.com/nonplain/nonplain-md-link.js).
 - **Valid permalinks**. No unexpected `404`s here. All note titles are turned into valid permalinks and then injected into each note's metadata via [`transform()`](https://github.com/nonplain/nonplain.js#transforming-nonplain-file-data).
 - **Easy development cycle.** Just write notes, build, and deploy.
 
