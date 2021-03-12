@@ -4,7 +4,7 @@ date: 2021-03-11
 permalink: /
 ---
 
-This site was made by exporting markdown notes to JSON with [**nonplain.js**](https://github.com/nonplain/nonplain.js) and then [using that data to generate webpages](https://www.11ty.dev/docs/pages-from-data/) with [**11ty**](https://www.11ty.dev/).
+This site was made by exporting markdown notes to JSON with [**nonplain.js**](https://github.com/nonplain/nonplain.js) and then using that data to generate webpages with [**11ty**](https://www.11ty.dev/).
 
 The result is a lightning-fast JAMstack website built entirely from markdown notes 🤓
 
