@@ -8,6 +8,8 @@ This site was made by exporting markdown notes to JSON with [**nonplain.js**](ht
 
 The result is a lightning-fast JAMstack website built entirely from markdown notes 🤓
 
+Feel free to check out the source code [on GitHub](https://github.com/nonplain/js-examples/tree/master/11ty-markdown-notes).
+
 ## A few stats
 
 - This entire site is built from just **180 lines of code**, including whitespace and JSON data

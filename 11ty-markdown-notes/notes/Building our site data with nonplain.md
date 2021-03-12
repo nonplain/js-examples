@@ -32,7 +32,7 @@ This metadata will help us name our pages and navigate to them reliably on the w
 
 ### The code
 
-The full code can be found in the repo that contains this site, so you can go read the full `build-notes.js` file there. In the meantime, we'll walk through each section of that code and talk about what it does.
+The full code can be found [on GitHub](https://github.com/nonplain/js-examples/tree/master/11ty-markdown-notes), so you can go read the full `build-notes.js` file there. In the meantime, we'll walk through each section of that code and talk about what it does.
 
 #### Dependencies
 
