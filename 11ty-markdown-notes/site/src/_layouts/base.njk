@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{- title | safe -}}</title>
+
+    <style>
+      :root {
+        --font-body:
+          -apple-system,
+          BlinkMacSystemFont,
+          helvetica,
+          'helvetica neue',
+          ubuntu,
+          roboto,
+          noto,
+          'segoe ui',
+          arial,
+          sans-serif;
+        --font-mono:
+          "SFMono-Regular",
+          Hack,
+          Menlo,
+          Monaco,
+          Consolas,
+          "Liberation Mono",
+          Courier,
+          monospace;
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: 1.1em;
+        line-height: 1.6em;
+        margin: 1.5em auto;
+        padding: 1.5em;
+        max-width: 60ch;
+        text-rendering: optimizeLegibility;
+      }
+
+      main {
+        margin: 48px 0;
+      }
+
+      footer {
+        font-size: 0.875em;
+        font-weight: 300;
+        text-align: right;
+      }
+
+      code {
+        font-family: var(--font-mono);
+      }
+
+      pre {
+        background: #F5F5F5;
+        border-radius: 12px;
+        padding: 1.5em;
+        overflow-x: auto;
+      }
+
+      pre code {
+        font-size: 0.875em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <span>🏠 <a href="/">Home</a></span>
+      </nav>
+    </header>
+
+    <hr />
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <hr />
+
+    <footer>
+      <p>
+        <span>nonplain</span>
+        &nbsp;/&nbsp;
+        <span id="pubyear"></span>
+        <script>document.getElementById("pubyear").innerHTML = (new Date).getFullYear()</script>
+      </p>
+    </footer>
+  </body>
+</html>

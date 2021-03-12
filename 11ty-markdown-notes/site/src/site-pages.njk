@@ -1,0 +1,16 @@
+---js
+{
+  layout: 'base.njk',
+  pagination: {
+      data: 'notes',
+      size: 1,
+      alias: 'note',
+  },
+  permalink: '/{{ note.metadata.permalink }}/',
+  templateEngineOverride: 'njk, md',
+}
+---
+
+# {{ note.metadata.title | safe }}
+
+{{ note.body | safe }}
