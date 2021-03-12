@@ -1,5 +1,5 @@
 ---
-title: 11ty + nonplain = web notes
+title: nonplain + 11ty = web notes
 date: 2021-03-11
 permalink: /
 ---
