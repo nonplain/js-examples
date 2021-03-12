@@ -11,7 +11,7 @@ The result is a lightning-fast JAMstack website built entirely from markdown not
 ## A few stats
 
 - This entire site is built from just **180 lines of code**, including whitespace and JSON data
-- It took **1 hour** to make this site, from start to finish
+- It took just **30 minutes** to put this site together, from start to finish
 - This page weighs just **~2kb**
 - This site is **accessible**, **mobile-friendly**, and **cool**
 
