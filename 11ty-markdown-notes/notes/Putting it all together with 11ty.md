@@ -110,6 +110,7 @@ First, create a layout template at `src/_layouts` (or `src/_includes`). A simple
 
 `src/_layouts/base.njk`:
 
+{% raw %}
 ```js
 <!DOCTYPE html>
 <html lang="en">
@@ -130,6 +131,7 @@ First, create a layout template at `src/_layouts` (or `src/_includes`). A simple
   </body>
 </html>
 ```
+{% endraw %}
 
 Then, make sure 11ty can see your layouts by adding the `_layouts` directory to your `.eleventy.js` configuration:
 

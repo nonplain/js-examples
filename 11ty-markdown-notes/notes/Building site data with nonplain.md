@@ -42,9 +42,10 @@ First, we need to import a few packages. We'll need the built-in Node.js `path` 
 const path = require('path');
 const URL = require('url').URL;
 const slug = require('slug');
+const Files = require('nonplain').default;
+const Link = require('nonplain-md-link').default;
 
-const { Files } = require('nonplain');
-const { Link, regex } = require('nonplain-md-link');
+const { regex } = require('nonplain-md-link');
 ```
 
 #### Helper functions
@@ -96,40 +97,32 @@ This function uses [`nonplain-md-link`](https://github.com/nonplain/nonplain-md-
 This is the fun part, where we put everything together using `nonplain.js`.
 
 ```js
-(async () => {
-  const print = console.log.bind(console, 'notes-build:');
+const files = new Files().load('../notes/**/*.md');
 
-  print('Building notes...');
+files.transform(({ body, metadata }) => {
+  const newBody = markdownLinksToHTML(body);
 
-  const files = await new Files().load('../notes/**/*.md');
+  const newMetadata = {
+    ...metadata,
+    permalink: metadata.permalink || '/' + slug(metadata.title) + '/',
+  };
 
-  files.transform(({ body, metadata }) => {
-    const newBody = markdownLinksToHTML(body);
+  return {
+    body: newBody,
+    metadata: newMetadata,
+  };
+});
 
-    const newMetadata = {
-      ...metadata,
-      permalink: metadata.permalink || '/' + slug(metadata.title) + '/',
-    };
-
-    return {
-      body: newBody,
-      metadata: newMetadata,
-    };
-  });
-
-  await files.export2JSON('src/_data/notes.json');
-
-  print('Done!', '\n');
-})();
+files.export2JSON('src/_data/notes.json');
 ```
 
-This is a [self-calling function](https://stackoverflow.com/questions/7515293/what-are-self-calling-functions-in-javascript), so it runs when the file is executed by our `npm run notes` script. Inside this function, we print a message stating that notes are being built, load the notes into a `Files` instance to parse them, run a `transform()` on our files, export our files to JSON, and print a closing message.
+This is the main code that builds our notes. It runs when the file is executed by our `npm run notes` script. First, we load the notes into a `Files` instance to parse them. Then, we run a `transform()` on our files. Finally, we export our files to JSON.
 
-To understand how this function works in more detail, see the links below:
+To understand how this code works in more detail, see the links below:
 
 - [Parsing files with `nonplain.js`](https://github.com/nonplain/nonplain.js#parsing-nonplain-files)
   ```js
-  const files = await new Files().load('../notes/**/*.md');
+  const files = new Files().load('../notes/**/*.md');
   ```
 - [Transforming file data with `nonplain.js`](https://github.com/nonplain/nonplain.js#transforming-nonplain-file-data)
   ```js
@@ -149,10 +142,10 @@ To understand how this function works in more detail, see the links below:
   ```
 - [Exporting file data to JSON with `nonplain.js`](https://github.com/nonplain/nonplain.js#export2json)
   ```js
-  await files.export2JSON('src/_data/notes.json');
+  files.export2JSON('src/_data/notes.json');
   ```
   
-Now, we can parse, transform, and export all of our note files by running this file.
+Now, we can parse, transform, and export all of our note files by running this file with Node.js.
 
 ```
 $ node build-notes.js

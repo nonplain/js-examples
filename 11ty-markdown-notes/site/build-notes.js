@@ -2,8 +2,9 @@ const path = require('path');
 const URL = require('url').URL;
 const slug = require('slug');
 
-const { Files } = require('nonplain');
-const { Link, regex } = require('nonplain-md-link');
+const Files = require('nonplain').default;
+const Link = require('nonplain-md-link').default;
+const { regex } = require('nonplain-md-link');
 
 function isFullUrl(href) {
   try {
@@ -33,28 +34,26 @@ function markdownLinksToHTML(content) {
   });
 }
 
-(async () => {
-  const print = console.log.bind(console, 'notes-build:');
+const print = console.log.bind(console, 'notes-build:');
 
-  print('Building notes...');
+print('Building notes...');
 
-  const files = await new Files().load('../notes/**/*.md');
+const files = new Files().load('../notes/**/*.md');
 
-  files.transform(({ body, metadata }) => {
-    const newBody = markdownLinksToHTML(body);
+files.transform(({ body, metadata }) => {
+  const newBody = markdownLinksToHTML(body);
 
-    const newMetadata = {
-      ...metadata,
-      permalink: metadata.permalink || '/' + slug(metadata.title) + '/',
-    };
+  const newMetadata = {
+    ...metadata,
+    permalink: metadata.permalink || '/' + slug(metadata.title) + '/',
+  };
 
-    return {
-      body: newBody,
-      metadata: newMetadata,
-    };
-  });
+  return {
+    body: newBody,
+    metadata: newMetadata,
+  };
+});
 
-  await files.export2JSON('src/_data/notes.json');
+files.export2JSON('src/_data/notes.json');
 
-  print('Done!', '\n');
-})();
+print('Done!', '\n');

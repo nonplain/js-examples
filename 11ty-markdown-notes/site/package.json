@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "nonplain": "^0.0.4",
-    "nonplain-md-link": "^0.0.7",
+    "nonplain": "^0.0.5",
+    "nonplain-md-link": "^0.0.9",
     "slug": "^4.0.3"
   }
 }
