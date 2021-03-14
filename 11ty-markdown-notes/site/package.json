@@ -4,7 +4,7 @@
   "description": "An 11ty website built from JSON data exported from nonplain markdown notes",
   "main": "index.js",
   "scripts": {
-    "build": "npm run notes && npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy",
     "dev": "npm run notes && npx @11ty/eleventy --serve",
     "notes": "node build-notes.js"
   },
